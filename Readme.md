@@ -52,16 +52,6 @@
 
 ## 요구사항 분석
 
-[_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) 
-
-#### _UML작성_
-
-![_FlowChart_](https://github.com/1willcommit/jdme/blob/242ac7effd529bbca2e0ba80b86f008885e10af0/assets/flowchart.png)
-
-#### _UsecaseDiagram작성_
-
-![_UsecaseDiagram_](https://github.com/1willcommit/jdme/blob/242ac7effd529bbca2e0ba80b86f008885e10af0/assets/usecaseDiagram.png)
-
 --- 
 
 ## 데이터 수집 및 개념 모델링
@@ -74,7 +64,7 @@
 | ---- | --------- | -------------------------------------------------------------------------------------------------------------------- |
 | 회원   | Entity    | 시스템 상의 역할은 관리자와 일반 회원으로 구분되며, 팀 내에서는 팀장과 팀원으로 구분된다.                                                                  |
 | 권한   | Entity    | Guest: 로그인하지 않은 사람<br/>Admin: 관리자<br/>Undefined: 회원가입 후 기본 프로필 수정을 하지 않은 사람                                          |
-| 프로필  | Entity    | 계정을 만들면 자동으로 생성되며, Nickname값은 undefined로 자동 부여된다. <br/>UPDATE 전까지 active_yn= FALSE                                        |
+| 프로필  | Entity    | 계정을 만들면 자동으로 생성되며, Nickname값은 undefined로 자동 부여된다. <br/>UPDATE 전까지 active_yn= FALSE                                   |
 | 게시판  | Attribute | 게시글의 속성에 포함된다.(공지사항, 문의게시판, 모집글, 자유게시판)                                                                              |
 | 게시글  | Entity    | 제목, 내용, 작성자 포함                                                                                                       |
 | 댓글   | Entity    | 소속 게시글, 작성자                                                                                                          |
@@ -83,7 +73,4 @@
 | 기술스택 | Entity    | 관리자만 추가할 수 있는 기술스택 tag. 유저는 이 태그를 활용하여<br/>1. 자신의 프로필에 태그와 포트폴리오 url을 첨부할 수 있으며 <br/>2. 게시글이나 유저 검색시에도 태그를 활용할 수 있다. |
 | 포지션  | Entity    | 관리자만 추가할 수 있는 포지션 tag. <br/>기술 스택tag와 동일하게 사용 가능하다.                                                                  |
 
-### 개념 모델(Conceptual Model)
-> 도출된 Entity의 속성을 파악하고 이들 사이의 관계를 고려하여 간략한 ERD를 작성하였다.
-
-![](https://github.com/1willcommit/jdme/blob/242ac7effd529bbca2e0ba80b86f008885e10af0/assets/ERDCloud.png)
+### 논리 모델
