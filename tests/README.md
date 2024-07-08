@@ -32,7 +32,7 @@
 | TEST_028 | 요청승낙 | member_id와 team_id가 입력 1. request_table DELETE 2. team_member table INSERT | 참여 권유 | PASS |
 | TEST_029 | 태그 필터링 검색 | 사용자가 태그를 이용하여 필터링 검색 => 태그_이름 active_yn y로 필터링 | 태그 생성 | PASS |
 | TEST_030 | 닉네임검색 | 사용자 닉네임(nickname)을 검색(SELECT & like 활용) active_yn y로 필터링 | 프로필 등록(피검색자) | PASS |
-| TEST_30 | 프로필 상세조회 | 사용자 프로필 id로 조회 | 프로필 등록 | PASS |
+| TEST_030-1 | 프로필 상세조회 | 사용자 프로필 id로 조회 | 프로필 등록 | PASS |
 | TEST_031 | 태그 필터링검색 | 사용자가 태그를 이용하여 필터링 검색 => 게시글_태그 active_yn y로 필터링 | 태그 생성, 게시글 생성 | PASS |
 | TEST_032 | 키워드검색 | 키워드가 입력된다 -> title이나 content에 키워드가 포함된 게시글 SELECT(like 활용) | 게시글 생성 | PASS |
 | TEST_033 | 정렬 | 정렬 정보가 제공(날짜순 or 이름순 등) -> 게시글 SELECT 시 order_by | 게시글 생성 | PASS |
