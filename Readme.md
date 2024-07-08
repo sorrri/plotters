@@ -66,7 +66,7 @@
 
 ## 데이터베이스 모델링
 
-### Entity 정의
+#### Entity 정의
 > 요구사항 분석단계에서 명사를 추출하고 속성과 엔터티를 구분한다.
 
 
@@ -85,46 +85,49 @@
 | 기술스택 | Entity    | 관리자만 추가할 수 있는 기술스택 tag. 유저는 이 태그를 활용하여<br/>1. 자신의 프로필에 태그와 포트폴리오 url을 첨부할 수 있으며 <br/>2. 게시글이나 유저 검색시에도 태그를 활용할 수 있다. |
 | 포지션  | Entity    | 관리자만 추가할 수 있는 포지션 tag. <br/>기술 스택tag와 동일하게 사용 가능하다.                                                                  |
 
-### 개념 모델
+#### 개념 모델
 
 > 각 Domain의 특성을 파악하여 구분될 수 있는 엔티티 구성
 
 ![](assets/개념모델링.png)
 
-### 논리 모델
-: 각 Domain의 특성을 파악하여 구분될 수 있는 엔티티 구성
+#### 논리 모델
+> 기존의 개념모델을 상세화하여 필요한 엔티티들과 그들 사이의 관계를 정의하고 정규화를 진행하였다.
 
-> **IE 표기법**
->
-> ![](assets/ie%20표기.png)
+**IE 표기법**
+
+ ![](assets/ie%20표기.png)
 
 
-> **바커 표기법**
-> 여러 게시글들의 엔티티가 super/sub 관계를 맺음
->
-> ![](assets/바커표기법.png)
->
+**바커 표기법**
+> 게시글의 종류별로 중복된 Column이 많은 경우 한 테이블 내의 Supertype과 Subtype으로 정의하였다.
 
-### 물리 모델
-: 정의된 논리모델을 기반으로 실제 서비스되는 물리모델 구성 
+ ![](assets/바커표기법.png)
+
+
+#### 물리 모델
+> 실제 데이터베이스에 이식하기 위해 Table과 Column이름을 구성하고 각 Attribute의 데이터 타입을 정의내렸다.
 
 **ERD**
 
 ![](assets/물리모델.png)
 
-### REPLICATION
+## 서버 구현
+> Replica Set을 구축하기 위해 Virtual Box에 Ubuntu 20.04.6버전의 가상머신 2개를 설치하고 각각의 가상머신을 Master와 Slave로 구분하였다.
+
+#### REPLICATION
 : 두 개 이상의 DBMS 이용하여 DB의 부하를 분산 시키는 기술.
 
-#### Replication 조건
-- master DB는 자신의 slave 정보를 알아야 한다.
-- slave DB는 자신의 master 정보와 추적할 log파일의 정보를 알아야 한다.
-
+#### Replication 시작 조건
+- master DB: 자신의 slave 정보
+- slave DB: 자신의 master 정보와 추적할 log파일의 정보
 
 ![](assets/레플리카셋.png)
 
-- master DB에서 create, update, delete가 일어나면 slave 자신의 DB에 복제해 똑같이 적용
+- master DB에서 create, update, delete를 처리하고 binary log를 기록하여 slave 서버로 전달한다.
+- slave는 일정한 주기로 binary log를 master에게서 전달받아 자신의 DB에 똑같이 적용
 - slave DB에서는 Read만 가능
-- master DB에서는 Create, Update, Delete / Slave DB에서는 Read를 해 부하 분산 
+- master DB에서는 Create, Update, Delete를, Slave DB에서는 Read를 해 데이터베이스 전체의 부하를 분산시킨다.
 
 ### TestCase
 > 하기 테스트 케이스 시연 및 결과
