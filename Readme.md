@@ -52,8 +52,7 @@
 
 
 ## 요구사항 분석
-
-[_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) </br>
+![](assets/요구사항분석.png)
 
 #### _FLOW CHART_
 ![](assets/flowchart.png)
@@ -85,10 +84,25 @@
 | 기술스택      | Entity    | 관리자만 추가할 수 있는 기술스택 tag. 유저는 이 태그를 활용하여 1. 자신의 프로필에 태그와 포트폴리오 url을 첨부할 수 있으며 2. 게시글이나 유저 검색시에도 태그를 활용할 수 있다. |
 | 포지션       | Entity    | 관리자만 추가할 수 있는 포지션 tag. 기술 스택tag와 동일하게 사용 가능하다.                                                              |
 
-### 개념 모델(Conceptual Model)
-> 도출된 Entity의 속성을 파악하고 이들 사이의 관계를 고려하여 간략한 ERD를 작성하였다.
-#### ERD(Physical)
-![](https://github.com/1willcommit/jdme/blob/2a885abcefed8459fb426c7d2a22866071b82f39/assets/ERDCloud.png)
+### 개념 모델
+
+> 각 Domain의 특성을 파악하여 구분될 수 있는 엔티티 구성
+
+![](assets/개념모델링.png)
+
+### 논리 모델
+
+> 각 Domain의 특성을 파악하여 구분될 수 있는 엔티티 구성
+>
+> **IE 표기법**
+>
+> ![](assets/ie%20표기.png)
+>
+> **바커 표기법**
+> 여러 게시글들의 엔티티가 super/sub 관계를 맺음
+>
+> ![](assets/바커표기법.png)
+
 
 ### TestCase
 
