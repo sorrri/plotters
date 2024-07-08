@@ -82,7 +82,7 @@
 | 댓글   | Entity    | 소속 게시글, 작성자                                                                                                          |
 | 알림   | Entity    | 발신인, 수신인, 팀 id, 활성화 여부                                                                                               |
 | 팀    | Entity    | 팀 소개 및 멤버들에 대한 정보                                                                                                    |
-| 기술스택 | Entity    | 관리자만 추가할 수 있는 기술스택 tag. 유저는 이 태그를 활용하여<br/>1. 자신의 프로필에 태그와 포트폴리오 url을 첨부할 수 있으며 <br/>2. 게시글이나 유저 검색시에도 태그를 활용할 수 있다. |
+| 기술<br/>스택 | Entity    | 관리자만 추가할 수 있는 기술스택 tag. 유저는 이 태그를 활용하여<br/>1. 자신의 프로필에 태그와 포트폴리오 url을 첨부할 수 있으며 <br/>2. 게시글이나 유저 검색시에도 태그를 활용할 수 있다. |
 | 포지션  | Entity    | 관리자만 추가할 수 있는 포지션 tag. <br/>기술 스택tag와 동일하게 사용 가능하다.                                                                  |
 
 #### 개념 모델
@@ -125,11 +125,12 @@
 ![](assets/레플리카셋.png)
 
 - master DB에서 create, update, delete를 처리하고 binary log를 기록하여 slave 서버로 전달한다.
-- slave는 일정한 주기로 binary log를 master에게서 전달받아 자신의 DB에 똑같이 적용
-- slave DB에서는 Read만 가능
-- master DB에서는 Create, Update, Delete를, Slave DB에서는 Read를 해 데이터베이스 전체의 부하를 분산시킨다.
+- slave는 일정한 주기로 binary log를 master에게서 전달받아 자신의 DB에 똑같이 적용한다.
+- slave DB에서는 Read만 가능하다.
+- master DB에서는 Create, Update, Delete를, slave DB에서는 Read를 해 데이터베이스 전체의 부하를 분산시킨다.
+- 후에 slave의 수가 늘어날 수 있다.
 
-### TestCase
+## TestCase
 > 하기 테스트 케이스 시연 및 결과
 
 - ex
