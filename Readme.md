@@ -130,7 +130,7 @@
 - master DB에서는 Create, Update, Delete를, slave DB에서는 Read를 해 데이터베이스 전체의 부하를 분산시킨다.
 - 후에 slave의 수가 늘어날 수 있다.
 
-## TestCase
+# TestCase
 > 하기 테스트 케이스 시연 및 결과
 
 - ex
