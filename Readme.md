@@ -2,7 +2,7 @@
 # 프로젝트 소개
 > 효율적인 팀 빌딩을 위한 플랫폼 - 작당모의(Plotters)
 
-![!\[\[plotters_logo.jpg\]\]](https://github.com/1willcommit/jdme/blob/0497b35b685a6d9817392aaec2c6d34b00996a4f/assets/plotters_logo.jpg)
+
 
 ### 팀 구성
 
@@ -30,7 +30,7 @@
 2. 팀원 모집시 기술 스택, 포지션 설정 가능
 3. 팀원 모집글에 질문 첨부 기능
 4. 기술스택을 태그로 등록하여 필터링 검색 기능 제공
-   ![title](https://drive.google.com/file/d/1EGVKStm3jJRhSVkJiEOBgRIfxAHjlrB4/view?usp=drive_link)
+
 
 #### _references_
 1. [_OKKY_](https://okky.kr/)
@@ -52,8 +52,9 @@
 
 ## 요구사항 분석
 
-[_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing)
-[_UML 작성_](https://drive.google.com/file/d/1vNPQ37NkD-3BpiN6Q_jewkCN-UdQRACd/view?usp=sharing)
+![[usecaseDiagram.png]]
+
+![[flowchart.png]]
 
 --- 
 
@@ -81,4 +82,6 @@
 
 ### 개념 모델(Conceptual Model)
 > 도출된 Entity의 속성을 파악하고 이들 사이의 관계를 고려하여 간략한 ERD를 작성하였다.
+> ![[Pasted image 20240708181830.png]]
 
+![[ERDCloud.png]]
