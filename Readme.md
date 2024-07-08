@@ -113,10 +113,10 @@
 ![](assets/물리모델.png)
 
 ### REPLICATION
-
-![](assets/레플리카%20셋.png)
-
 : 두 개 이상의 DBMS 이용하여 DB의 부하를 분산 시키는 기술
+
+![](assets/레플리카셋.png)
+
 - master DB에서 create, update, delete가 일어나면 slave 자신의 DB에 복제해 똑같이 적용
 - slave DB에서는 Read만 가능
 - master DB에서는 Create, Update, Delete / Slave DB에서는 Read를 해 부하 분산 
