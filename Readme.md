@@ -8,7 +8,7 @@
 
 | 김서현                                   | 김소리    | 용길한        | 장민근         | 정준서           |
 | ------------------------------------- | ------ | ---------- | ----------- | ------------- |
-| [1etterh](https://github.com/1etterh) | sorrri | Yong-ga-ri | caolian2003 | JeongJunSeo99 |
+| [1etterh](https://github.com/1etterh) | [sorrri](https://github.com/sorrri) | [Yong-ga-ri](https://github.com/Yong-ga-ri) | [caolian2003](https://github.com/caolian2003) | [JeongJunSeo99](https://github.com/JeongJunSeo99) |
 
 ## 프로젝트 배경
 - IT  공모전 팀원 모집 플랫폼 기능이 제한적임
@@ -44,8 +44,8 @@
 ## 프로젝트 진행 과정
 1. 5인 1조로 모여 회의 후 주제선정
 2. 채택된 주제에 대한 요구사항 정의
-3. 데이터 수집 및 모델링작업
-4. HeidiSQL, MariaDB를 활용하여 실제 Database 구축
+3. 모델링작업
+4. 모델링된 데이터베이스를 기반으로 서비스 시뮬레이션
 
 ---
 
@@ -54,10 +54,10 @@
 
 [_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) </br>
 
-#### _UML작성_
+#### _FLOW CHART_
 ![](assets/flowchart.png)
 
-#### _UsecaseDiagram작성_
+#### _UsecaseDiagram_
 ![](assets/usecaseDiagram.png)
 
 --- 
