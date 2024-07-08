@@ -53,8 +53,8 @@
 ## 요구사항 분석
 
 [_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) </br>
-[_UML 작성_](assets/flowchart.png)
-[_UsecaseDiagram작성_](assets/usecaseDiagram.png)
+![_UML 작성_](assets/flowchart.png)
+![_UsecaseDiagram작성_](assets/usecaseDiagram.png)
 
 --- 
 
