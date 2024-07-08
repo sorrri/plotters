@@ -2,7 +2,7 @@
 # 프로젝트 소개
 > 효율적인 팀 빌딩을 위한 플랫폼 - 작당모의(Plotters)
 
-![!\[\[plotters_logo.jpg\]\]](https://github.com/1willcommit/jdme/blob/cf8edc69e225e9e27e1ad7f38c1a530a1656e0c3/plotters_logo.jpg = 300 x 300)
+![!\[\[plotters_logo.jpg\]\]](https://github.com/1willcommit/jdme/blob/cf8edc69e225e9e27e1ad7f38c1a530a1656e0c3/plotters_logo.jpg)
 
 ### 팀 구성
 
