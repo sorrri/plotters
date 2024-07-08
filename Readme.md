@@ -53,7 +53,8 @@
 ## 요구사항 분석
 
 [_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) </br>
-[_UML 작성_](https://drive.google.com/file/d/1vNPQ37NkD-3BpiN6Q_jewkCN-UdQRACd/view?usp=sharing)
+[_UML 작성_](https://github.com/1willcommit/jdme/blob/b3a9c32a68028f7766af298a3082918c45fdc727/assets/ERDCloud.png)
+[_UsecaseDiagram작성_](https://github.com/1willcommit/jdme/blob/b3a9c32a68028f7766af298a3082918c45fdc727/assets/usecaseDiagram.png)
 
 --- 
 
