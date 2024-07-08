@@ -30,7 +30,7 @@
 2. 팀원 모집시 기술 스택, 포지션 설정 가능
 3. 팀원 모집글에 질문 첨부 기능
 4. 기술스택을 태그로 등록하여 필터링 검색 기능 제공
-
+   ![1111111111](https://github.com/1willcommit/jdme/assets/82440364/b87ce0f4-dcf8-414a-8a4e-3adeb13056e1)
 
 #### _references_
 1. [_OKKY_](https://okky.kr/)
@@ -52,9 +52,8 @@
 
 ## 요구사항 분석
 
-![[usecaseDiagram.png]]
-
-![[flowchart.png]]
+[_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) </br>
+[_UML 작성_](https://drive.google.com/file/d/1vNPQ37NkD-3BpiN6Q_jewkCN-UdQRACd/view?usp=sharing)
 
 --- 
 
