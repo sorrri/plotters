@@ -114,8 +114,15 @@
 
 
 ### TestCase
+> 하기 테스트 케이스 시연 및 결과
 
----
+- ex)
+    - TEST_010
+        ![](assets/게시글%20작성.gif)
+    - TEST_012
+        ![](assets/시험문제.gif)
+    - TEST_022
+        ![](assets/팀생성.gif)
 
 <details>
 <summary>
