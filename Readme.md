@@ -50,8 +50,10 @@
 
 ---
 
+### WBS
+![](assets/wbs.png)
 
-## 요구사항 분석
+### 요구사항 분석
 ![](assets/요구사항분석.png)
 
 #### _FLOW CHART_
@@ -62,7 +64,7 @@
 
 --- 
 
-## 데이터 수집 및 개념 모델링
+## 데이터베이스 모델링
 
 ### Entity 정의
 > 요구사항 분석단계에서 명사를 추출하고 속성과 엔터티를 구분한다.
@@ -91,8 +93,7 @@
 ![](assets/개념모델링.png)
 
 ### 논리 모델
-
-> 각 Domain의 특성을 파악하여 구분될 수 있는 엔티티 구성
+: 각 Domain의 특성을 파악하여 구분될 수 있는 엔티티 구성
 
 > **IE 표기법**
 >
@@ -105,22 +106,27 @@
 >
 
 ### 물리 모델
-> 정의된 논리모델을 기반으로 실제 서비스되는 물리모델 구성 
+: 정의된 논리모델을 기반으로 실제 서비스되는 물리모델 구성 
 
 **ERD**
 
 ![](assets/물리모델.png)
 
-
-
+### REPLICATION
+: 두 개 이상의 DBMS 이용하여 DB의 부하를 분산 시키는 기술
+- master DB에서 create, update, delete가 일어나면 slave 자신의 DB에 복제해 똑같이 적용
+- slave DB에서는 Read만 가능
+- master DB에서는 Create, Update, Delete / Slave DB에서는 Read를 해 부하 분산 
 ### TestCase
 > 하기 테스트 케이스 시연 및 결과
 
-- ex)
+- ex - 
     - TEST_010
         ![](assets/게시글%20작성.gif)
+
     - TEST_012
         ![](assets/시험문제.gif)
+
     - TEST_022
         ![](assets/팀생성.gif)
 
