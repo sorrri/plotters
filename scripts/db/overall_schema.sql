@@ -1,3 +1,212 @@
+DROP DATABASE test1;
+
+CREATE DATABASE test1;
+
+USE test1;
+
+CREATE TABLE tbl_member (
+  member_id INT PRIMARY KEY AUTO_INCREMENT,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN NOT NULL
+);
+
+CREATE TABLE tbl_auth (
+  auth_id INT PRIMARY KEY AUTO_INCREMENT,
+  auth_name VARCHAR(255) NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN DEFAULT true NOT NULL
+);
+
+CREATE TABLE tbl_team (
+  team_id INT PRIMARY KEY AUTO_INCREMENT,
+  introduction VARCHAR(1023),
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN DEFAULT true NOT NULL
+);
+
+CREATE TABLE tbl_profile (
+  profile_member_id INT PRIMARY KEY,
+  introduction VARCHAR(255),
+  profile_image VARCHAR(255),
+  nickname VARCHAR(255),
+  soft_skill VARCHAR(255),
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN DEFAULT true NOT NULL
+);
+
+CREATE TABLE tbl_team_member (
+  member_id INT NOT NULL,
+  team_role INT NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN NOT NULL,
+  team_id INT NOT NULL,
+  PRIMARY KEY (member_id, team_id)
+);
+
+CREATE TABLE tbl_request (
+  request_id INT PRIMARY KEY AUTO_INCREMENT,
+  sender_nickname VARCHAR(255) NOT NULL,
+  receiver_nickname VARCHAR(255) NOT NULL,
+  read_checked BOOLEAN DEFAULT FALSE NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN NOT NULL,
+  member_id INT NOT NULL,
+  team_id INT NOT NULL
+);
+
+CREATE TABLE tbl_member_report (
+  member_report_id INT PRIMARY KEY AUTO_INCREMENT,
+  report_type VARCHAR(255) NOT NULL,
+  created_at DATETIME NOT NULL,
+  reported_id INT NOT NULL,
+  reporter_id INT NOT NULL
+);
+
+CREATE TABLE tbl_post (
+  post_id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  content VARCHAR(1023) NOT NULL,
+  post_type VARCHAR(20) NOT NULL COMMENT 'community, ask, notification, contest, recruit',
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN NOT NULL,
+  member_id INT NOT NULL
+);
+
+CREATE TABLE tbl_comment (
+  comment_id INT PRIMARY KEY AUTO_INCREMENT,
+  content VARCHAR(255) NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  active_yn BOOLEAN NOT NULL,
+  post_id INT NOT NULL,
+  member_id INT NOT NULL
+);
+
+CREATE TABLE tbl_member_auth (
+  member_id INT NOT NULL,
+  auth_id INT NOT NULL,
+  PRIMARY KEY (member_id, auth_id)
+);
+
+CREATE TABLE tbl_scrap_like (
+  scrap_like_id INT PRIMARY KEY AUTO_INCREMENT,
+  flag BOOLEAN NOT NULL,
+  created_at DATETIME NOT NULL,
+  member_id INT NOT NULL,
+  post_id INT NOT NULL
+);
+
+CREATE TABLE tbl_contest (
+  contest_post_id INT PRIMARY KEY,
+  deadline DATETIME NOT NULL
+);
+
+CREATE TABLE tbl_tag (
+  tag_id INT PRIMARY KEY AUTO_INCREMENT,
+  tag_name VARCHAR(255) NOT NULL,
+  tag_type VARCHAR(255) NOT NULL COMMENT 'post, stack'
+);
+
+CREATE TABLE tbl_skill (
+  skill_id INT PRIMARY KEY AUTO_INCREMENT,
+  url VARCHAR(255),
+  tag_id INT NOT NULL,
+  profile_id INT NOT NULL
+);
+
+CREATE TABLE tbl_question (
+  question_id INT PRIMARY KEY AUTO_INCREMENT,
+  question VARCHAR(255) NOT NULL,
+  recruit_post_id INT NOT NULL
+);
+
+CREATE TABLE tbl_recruit (
+  recruit_post_id INT PRIMARY KEY NOT NULL,
+  team_id INT NOT NULL
+);
+
+CREATE TABLE tbl_answer (
+  answer VARCHAR(1023),
+  created_at DATETIME NOT NULL,
+  member_id INT NOT NULL,
+  question_id INT NOT NULL,
+  PRIMARY KEY (member_id, question_id)
+);
+
+CREATE TABLE tbl_post_report (
+  post_report_id INT PRIMARY KEY AUTO_INCREMENT,
+  report_type VARCHAR(255) NOT NULL,
+  reporter_id INT NOT NULL,
+  post_id INT NOT NULL,
+  created_at DATETIME NOT NULL
+);
+
+CREATE TABLE tbl_post_tag (
+  post_id INT NOT NULL,
+  tag_id INT NOT NULL,
+  PRIMARY KEY (post_id, tag_id)
+);
+
+ALTER TABLE tbl_profile ADD FOREIGN KEY (profile_member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_team_member ADD FOREIGN KEY (member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_team_member ADD FOREIGN KEY (team_id) REFERENCES tbl_team (team_id);
+
+ALTER TABLE tbl_request ADD FOREIGN KEY (member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_request ADD FOREIGN KEY (team_id) REFERENCES tbl_team (team_id);
+
+ALTER TABLE tbl_member_report ADD FOREIGN KEY (reported_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_member_report ADD FOREIGN KEY (reporter_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_post ADD FOREIGN KEY (member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_comment ADD FOREIGN KEY (post_id) REFERENCES tbl_post (post_id);
+
+ALTER TABLE tbl_comment ADD FOREIGN KEY (member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_member_auth ADD FOREIGN KEY (member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_member_auth ADD FOREIGN KEY (auth_id) REFERENCES tbl_auth (auth_id);
+
+ALTER TABLE tbl_scrap_like ADD FOREIGN KEY (member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_scrap_like ADD FOREIGN KEY (post_id) REFERENCES tbl_post (post_id);
+
+ALTER TABLE tbl_contest ADD FOREIGN KEY (contest_post_id) REFERENCES tbl_post (post_id);
+
+ALTER TABLE tbl_skill ADD FOREIGN KEY (tag_id) REFERENCES tbl_tag (tag_id) ON DELETE CASCADE;
+
+ALTER TABLE tbl_skill ADD FOREIGN KEY (profile_id) REFERENCES tbl_profile (profile_member_id);
+
+ALTER TABLE tbl_question ADD FOREIGN KEY (recruit_post_id) REFERENCES tbl_recruit (recruit_post_id);
+
+ALTER TABLE tbl_recruit ADD FOREIGN KEY (recruit_post_id) REFERENCES tbl_post (post_id);
+
+ALTER TABLE tbl_recruit ADD FOREIGN KEY (team_id) REFERENCES tbl_team (team_id);
+
+ALTER TABLE tbl_answer ADD FOREIGN KEY (member_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_answer ADD FOREIGN KEY (question_id) REFERENCES tbl_question (question_id);
+
+ALTER TABLE tbl_post_report ADD FOREIGN KEY (reporter_id) REFERENCES tbl_member (member_id);
+
+ALTER TABLE tbl_post_report ADD FOREIGN KEY (post_id) REFERENCES tbl_post (post_id);
+
+ALTER TABLE tbl_post_tag ADD FOREIGN KEY (post_id) REFERENCES tbl_post (post_id);
+
+ALTER TABLE tbl_post_tag ADD FOREIGN KEY (tag_id) REFERENCES tbl_tag (tag_id) ON DELETE CASCADE;
 
 -- 회원 삽입
 INSERT INTO tbl_member (member_id, password, email, created_at, updated_at, active_yn) VALUES
@@ -236,3 +445,129 @@ INSERT INTO tbl_scrap_like (member_id, post_id, flag, created_at) VALUES
 (3, 3, FALSE, NOW()),
 (5, 8, TRUE, NOW()),
 (10, 3, TRUE, NOW());
+
+DELIMITER //
+
+CREATE OR REPLACE TRIGGER after_create_member
+        AFTER INSERT ON tbl_member
+        FOR EACH ROW
+BEGIN
+        INSERT INTO tbl_profile (profile_member_id, introduction, profile_image, nickname, soft_skill, created_at, updated_at, active_yn)
+        VALUES (NEW.member_id, NULL, NULL, NULL, NULL, NOW(), NOW(), FALSE);
+        INSERT INTO tbl_member_auth (member_id, auth_id)
+        VALUES (NEW.member_id, 4);
+END //
+
+DELIMITER ;
+
+--------------------------------------------
+DELIMITER //
+
+CREATE OR REPLACE TRIGGER after_delete_account
+        AFTER UPDATE ON tbl_member
+        FOR EACH ROW
+BEGIN
+        -- 활성화된 유저라면
+        IF (NEW.active_yn <> OLD.active_yn) AND (NEW.active_yn = FALSE) THEN
+                -- 프로필 비활성화
+                UPDATE tbl_profile
+                SET active_yn = FALSE, updated_at = NOW()
+                WHERE profile_member_id = NEW.member_id;
+        END IF;
+END //
+
+DELIMITER ;
+
+---------------------------------------------------------
+DELIMITER //
+
+CREATE OR REPLACE TRIGGER after_enroll_profile
+        AFTER UPDATE ON tbl_profile
+        FOR EACH ROW
+BEGIN
+        IF NEW.active_yn = 1 AND OLD.active_yn = 0 THEN
+                UPDATE tbl_member_auth
+                SET auth_id = 3
+                WHERE member_id = NEW.profile_member_id;
+        END IF;
+END //
+
+DELIMITER ;
+
+--------------------------------------------------------
+DELIMITER //
+
+CREATE OR REPLACE TRIGGER after_post_for_contest
+        AFTER INSERT ON tbl_post
+        FOR EACH ROW
+BEGIN
+        IF NEW.post_type = 'contest' THEN
+                INSERT INTO tbl_contest (contest_post_id, deadline)
+                VALUES(NEW.post_id, NOW());
+        END IF;
+END //
+
+DELIMITER ;
+
+-----------------------------------------------------------
+DELIMITER //
+
+CREATE OR REPLACE TRIGGER after_insert_team_member
+AFTER INSERT ON tbl_team_member
+FOR EACH ROW
+BEGIN
+    -- tbl_request에 NEW.member_id와 NEW.team_id가 있는지 확인
+    IF EXISTS (SELECT 1 FROM tbl_request WHERE member_id = NEW.member_id AND team_id = NEW.team_id) THEN
+        -- 조건이 만족되면 tbl_request에서 해당 레코드 삭제
+        DELETE FROM tbl_request 
+        WHERE member_id = NEW.member_id AND team_id = NEW.team_id;
+    END IF;
+END//
+
+DELIMITER ;
+
+-------------------------------------------------------
+DELIMITER //
+
+CREATE OR REPLACE TRIGGER trg_update_post_status
+AFTER INSERT ON tbl_post_report
+FOR EACH ROW
+BEGIN
+    -- 동일 post_id의 report 횟수 카운트
+    DECLARE report_count INT;
+    
+    SELECT COUNT(*)
+    INTO report_count
+    FROM tbl_post_report
+    WHERE post_id = NEW.post_id;
+    
+    -- report 횟수가 5회 이상이면 post의 active_yn 업데이트
+    IF report_count >= 5 THEN
+        UPDATE tbl_post
+        SET active_yn = 0
+        WHERE post_id = NEW.post_id;
+    END IF;
+END//
+
+DELIMITER ;
+
+-----------------------------------------------------------
+DELIMITER // 
+
+CREATE OR REPLACE TRIGGER after_member_report
+    AFTER INSERT
+    ON tbl_member_report
+    FOR EACH ROW
+BEGIN
+        if (SELECT COUNT(*)
+            FROM tbl_member_report
+            WHERE reported_id = NEW.reported_id)
+            >= 5
+        then 
+                  UPDATE tbl_member
+                  SET active_yn = FALSE
+                  WHERE member_id = NEW.reported_id;
+        END if;                
+END//
+
+DELIMITER ;

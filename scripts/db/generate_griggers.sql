@@ -1,4 +1,3 @@
-
 -- 회원 삽입
 INSERT INTO tbl_member (member_id, password, email, created_at, updated_at, active_yn) VALUES
 (1, 'qswedlmer!ml3$5', '1etterh.dev@gmail.com', NOW(), NOW(), TRUE),

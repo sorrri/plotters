@@ -1,3 +1,9 @@
-### 작당모의
+<div align="center">
 
-#### 효율적인 팀 빌딩을 위한 플랫폼 서비스
+  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
+  <h1>JakDang-Moeui</h1>
+  
+  <p>
+    An awesome projects for people who are in needs for their projects
+  </p>
+  
