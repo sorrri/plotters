@@ -2,6 +2,11 @@
 # 프로젝트 소개
 > 효율적인 팀 빌딩을 위한 플랫폼 - 작당모의(Plotters)
 
+### 팀 구성
+
+| 김서현     | 김소리    | 용길한        | 장민근         | 정준서           |
+| ------- | ------ | ---------- | ----------- | ------------- |
+| 1etterh | sorrri | Yong-ga-ri | caolian2003 | JeongJunSeo99 |
 
 ## 기존 서비스와의 차별점
 1. 프로필 설정을 통한 커뮤니케이션 비용 절감
@@ -28,7 +33,7 @@
 - 팀을 구성하면 팀 소개 페이지를 첨부할 수 있어 지원자 역시 모집 중인 팀의 정보를 확인할 수 있는 기능을 추가했다.
 
 
-#### _references_
+*_references_*
 1. [_요즘것들_](https://www.allforyoung.com)
 2. [_비긴메이트_](https://beginmate.com/)
 3. [_인프런_](https://www.inflearn.com/community/projects)
