@@ -52,15 +52,15 @@
 
 ## 요구사항 분석
 
-[_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) </br>
+[_요구사항 분석_](https://docs.google.com/spreadsheets/d/1kQ2-s_K4Ma4VO2P3hSHa7F0qFnhoF_lXNa2N63ZqfLA/edit?usp=sharing) 
 
 #### _UML작성_
 
-![](https://github.com/1willcommit/jdme/blob/242ac7effd529bbca2e0ba80b86f008885e10af0/assets/flowchart.png)
+![_FlowChart_](https://github.com/1willcommit/jdme/blob/242ac7effd529bbca2e0ba80b86f008885e10af0/assets/flowchart.png)
 
 #### _UsecaseDiagram작성_
 
-![](https://github.com/1willcommit/jdme/blob/242ac7effd529bbca2e0ba80b86f008885e10af0/assets/usecaseDiagram.png)
+![_UsecaseDiagram_](https://github.com/1willcommit/jdme/blob/242ac7effd529bbca2e0ba80b86f008885e10af0/assets/usecaseDiagram.png)
 
 --- 
 
@@ -74,7 +74,7 @@
 | ---- | --------- | -------------------------------------------------------------------------------------------------------------------- |
 | 회원   | Entity    | 시스템 상의 역할은 관리자와 일반 회원으로 구분되며, 팀 내에서는 팀장과 팀원으로 구분된다.                                                                  |
 | 권한   | Entity    | Guest: 로그인하지 않은 사람<br/>Admin: 관리자<br/>Undefined: 회원가입 후 기본 프로필 수정을 하지 않은 사람                                          |
-| 프로필  | Entity    | 계정을 만들면 자동으로 생성되며, Nickname값은 undefined로 자동 부여된다. UPDATE 전까지 active_yn= FALSE                                        |
+| 프로필  | Entity    | 계정을 만들면 자동으로 생성되며, Nickname값은 undefined로 자동 부여된다. <br/>UPDATE 전까지 active_yn= FALSE                                        |
 | 게시판  | Attribute | 게시글의 속성에 포함된다.(공지사항, 문의게시판, 모집글, 자유게시판)                                                                              |
 | 게시글  | Entity    | 제목, 내용, 작성자 포함                                                                                                       |
 | 댓글   | Entity    | 소속 게시글, 작성자                                                                                                          |
