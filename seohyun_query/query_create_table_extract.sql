@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `tbl_contest` (
 
 -- 테이블 testdb2.tbl_member 구조 내보내기
 CREATE TABLE IF NOT EXISTS `tbl_member` (
-  `member_id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` INT AUTO_INCREMENT,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
