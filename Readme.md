@@ -2,6 +2,7 @@
 # 프로젝트 소개
 > 효율적인 팀 빌딩을 위한 플랫폼 - 작당모의(Plotters)
 
+![](assets/plotters_logo.jpg)
 
 
 ### 팀 구성
@@ -31,7 +32,7 @@
 3. 팀원 모집글에 질문 첨부 기능
 4. 기술스택을 태그로 등록하여 필터링 검색 기능 제공
 
-![1111111111](https://github.com/1willcommit/jdme/assets/82440364/b87ce0f4-dcf8-414a-8a4e-3adeb13056e1)
+![](assets/1111111111.png)
 
 #### _references_
 1. [_OKKY_](https://okky.kr/)
