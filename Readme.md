@@ -1539,6 +1539,7 @@
 |소감|소감을 입력해주세요.|
 
 </details>
+</br>
 
 <details>
 <summary>김소리</summary>
@@ -1552,6 +1553,7 @@
 |소감|소감을 입력해주세요.|
 
 </details>
+</br>
 
 <details>
 <summary>용길한</summary>
@@ -1565,6 +1567,7 @@
 |소감|소감을 입력해주세요.|
 
 </details>
+</br>
 
 
 <details>
@@ -1579,7 +1582,7 @@
 |소감|소감을 입력해주세요.|
 
 </details>
-
+</br>
 
 <details>
 <summary>정준서</summary>
@@ -1593,3 +1596,4 @@
 |소감|소감을 입력해주세요.|
 
 </details>
+</br>
